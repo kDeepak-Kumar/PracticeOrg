@@ -1,0 +1,6 @@
+<aura:event type="COMPONENT" description="Event template" >
+    
+    <!-- Creating the event -->
+    <aura:attribute name="toShowVar" type="boolean"/>
+    
+</aura:event>

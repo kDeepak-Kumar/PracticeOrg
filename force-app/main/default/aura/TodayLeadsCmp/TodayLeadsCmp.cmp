@@ -1,0 +1,46 @@
+<aura:component controller="TodayLeadApex" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.onLoad}" />   
+    <aura:attribute name="TodayLeadsList" type="LIST"/>
+    <aura:attribute name="toShowLeadForm" type="boolean" default="false" />
+    <aura:handler name="LeadCompEvent" event="c:LeadFormCompEvent" action="{!c.handleComponentEvent}"/>
+    
+    <div style="background:#b0adab">
+        <div class="slds-p-around_medium">
+            <!--Creating Heade-->
+            <div class="demo-only" style="padding:0.5rem;background:#16325c">
+                <div class="slds-text-color_inverse slds-text-align_center slds-p-around_medium slds-text-heading_medium">
+                    Today Created Leads<br/>
+                    <lightning:button variant="brand" 
+                                      label="New Lead"
+                                      title="Creates a New Lead" 
+                                      onclick="{! c.handleClick }" />
+                </div>
+            </div>     
+        </div>
+        <div class="slds-p-around_medium" >
+            <!-- Creating Button -->
+            <aura:iteration items="{!v.TodayLeadsList}" var="item">
+                <lightning:card footer="Deepak Kumar" title="{!item.LastName}">
+                    <p class="slds-p-horizontal_small">
+                       Last Name 	::	 {!item.LastName} <br/>
+                       First Name	::	 {!item.FirstName} <br/> 
+                       Lead company ::	 {!item.Company} <br/>
+                       lead Phone 	::	 {!item.Phone}
+                    </p>
+                </lightning:card>
+            </aura:iteration>
+        </div>
+    </div>
+    
+    <aura:if isTrue="{!v.toShowLeadForm}">
+        <c:NewLeadFormComp/>
+  </aura:if>
+    
+    
+    
+    
+    
+    
+    
+</aura:component>

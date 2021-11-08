@@ -1,0 +1,21 @@
+<aura:component controller="Example_sObject_Account_Apex">
+	<!-- creating a attribute for sObjectType of Account
+		 it Definitely need to have a default value -->
+    <aura:attribute name="acc" type="Account" 
+                    default="{'sObjectType':'Account','Name':'','Phone':'','Industry':'','Rating':''}"/>
+    <aura:attribute name="result" type="string"/>
+    
+    <div class="box">
+        <lightning:card title="Creating Account Record" >
+            <lightning:input label="Name" value="{!v.acc.Name}" />
+            <lightning:input label="Phone" value="{!v.acc.Phone}" />
+            <lightning:input label="Industry" value="{!v.acc.Industry}" />
+            <lightning:input label="Rating" value="{!v.acc.Rating}" />
+            <aura:set attribute="footer" >
+                <lightning:button label="Submit" onclick="{!c.create}" /><br/>
+            </aura:set>
+        </lightning:card>
+        result :: {!v.result}
+    </div>
+    
+</aura:component>

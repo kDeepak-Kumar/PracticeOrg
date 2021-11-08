@@ -1,0 +1,40 @@
+<apex:page controller="AccConOppController">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlock title="Account Information">
+            <apex:pageBlockSection title="Account Edit">
+                    <apex:outputField value="{!accountMethod.name}"/>
+                    <apex:outputField value="{!accountMethod.Phone}"/>
+                    <apex:outputField value="{!accountMethod.Rating}"/>
+                    <apex:outputField value="{!accountMethod.Active__c}"/>
+                    <apex:outputField value="{!accountMethod.Industry}"/>
+                    <apex:outputField value="{!accountMethod.Description}"/>                
+             </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Contact Information">
+             <apex:pageBlockSection title="Contact Edit">
+                    <apex:outputField value="{!ContactInfo.lastName}"/>
+                    <apex:outputField value="{!ContactInfo.FirstName}"/>
+                    <apex:outputField value="{!ContactInfo.Title}"/>
+                    <apex:outputField value="{!ContactInfo.phone}"/>
+                    <apex:outputField value="{!ContactInfo.AccountId}"/>
+                    <apex:outputField value="{!ContactInfo.Description}"/>
+                </apex:pageBlockSection>  
+        </apex:pageBlock>
+        <apex:pageBlock title="Opportunity Information">
+        <apex:pageBlockSection title="Opportunity Edit">
+                <apex:outputField value="{!OppInfo.name}"/>
+                <apex:outputField value="{!OppInfo.CloseDate}"/>
+                <apex:outputField value="{!OppInfo.AccountId}"/>
+                <apex:outputField value="{!OppInfo.StageName}"/>
+                <apex:outputField value="{!OppInfo.Type}"/>
+                <apex:outputField value="{!OppInfo.Description}"/>
+            </apex:pageBlockSection>           
+        </apex:pageBlock>
+        <apex:pageblockbuttons >
+            <apex:commandButton value="Previous" action="{!PreviousPageMethod3}"/>
+            <apex:commandButton value="Submit" action="{!SavingTheRecord}"/>
+        </apex:pageblockbuttons>
+        </apex:pageBlock>
+    </apex:form>  
+</apex:page>

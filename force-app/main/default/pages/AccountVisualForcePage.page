@@ -1,0 +1,24 @@
+<apex:page standardController="Account" Extensions="AccountController">
+    <apex:form >
+        <apex:pageBlock title="Account Edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!savingRecord}" value="Submit"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Account Information" >
+                <apex:inputField value="{!Account.name}"/>
+                <apex:inputField value="{!Account.phone}"/>
+                <apex:inputField value="{!Account.Industry}"/>
+                <apex:inputField value="{!Account.website}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Address Information" >
+                <apex:inputField value="{!Account.BillingStreet}"/>
+                <apex:inputField value="{!Account.BillingCity}"/>
+                <apex:inputField value="{!Account.BillingState}"/>
+                <apex:inputField value="{!Account.BillingPostalCode}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Description Information" >
+                <apex:inputField value="{!Account.Description }"/>                
+            </apex:pageBlockSection>
+        </apex:pageBlock>       
+    </apex:form>
+</apex:page>

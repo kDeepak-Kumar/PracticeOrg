@@ -1,0 +1,25 @@
+<aura:component controller="SobjectAndFieldsPickList_Apex">
+	<aura:attribute name="options" type="string[]" />
+    <aura:attribute name="fields" type="string[]" />
+    <aura:attribute name="selected" type="string" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <lightning:select name="select" label="Select a sObject:" aura:id="select"  onchange="{!c.doSomething}" >
+        <aura:iteration items="{!v.options}" var="option">
+            <option text="{!option}" value="{!option}"/>
+        </aura:iteration>
+    </lightning:select>
+    <br/>
+   <!-- <lightning:select name="select" label="Select a Field:" aura:id="selectFields"  >
+        <aura:iteration items="{!v.fields}" var="field">
+            <option text="{!field}" value="{!field}"/>
+        </aura:iteration>
+    </lightning:select> -->
+    <lightning:dualListbox name="languages"
+                           label= "Select Languages"
+                           sourceLabel="Available"
+                           selectedLabel="Selected"
+                           fieldLevelHelp="Select your preferred languages"
+                           options="{!v.fields}"
+                           onchange="{! c.handleChange }"/>
+
+</aura:component>

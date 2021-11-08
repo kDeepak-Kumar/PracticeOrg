@@ -1,0 +1,18 @@
+<aura:component controller = "RetrieveContactInfoApex">
+    
+    <lightning:button variant="success" 
+                      label="Contact Records" 
+                      title="Con Records Associated with AccountId"
+                      onclick="{! c.ContactRecButtonMethod }"/>
+    
+    <aura:attribute name="ContactRec" type = "List" />
+    
+    <aura:iteration items="{!v.ContactRec}" var="item">
+        <b> ID:: </b> {!item.Id} <br/>
+        <b> Account Id :: </b> {!item.AccountId} <br/>
+        <b> last Name:: </b> {!item.LastName} <br/>
+        <b> Phone:: </b> {!item.Phone} <br/>
+        ******************************************** <br/>
+    </aura:iteration>
+    
+</aura:component>

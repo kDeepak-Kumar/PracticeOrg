@@ -1,0 +1,16 @@
+<apex:page Controller="CustomController1" >
+     <apex:form id="formId">
+         <apex:pageBlock title="List of Account Records" id="MyPageBlockId">             
+                 <apex:pageBlockButtons >
+                     <apex:commandButton action="{!ActiveRecords}" value="Active" reRender="MyPageBlockId,formId" disabled="{!IsActive} "/>
+                     <apex:commandButton action="{!InActiveRecords}" value="InActive" reRender="MyPageBlockId,formId" disabled="{!IsInActive}" />
+                 </apex:pageBlockButtons>    
+                 <apex:pageblockTable value="{!accList}" var="accEach" >
+                     <apex:column value="{!accEach.id}"/>
+                     <apex:column value="{!accEach.name}"/>
+                     <apex:column value="{!accEach.phone}"/>
+                     <apex:column value="{!accEach.Active__c}"/>
+                 </apex:pageblockTable>   
+         </apex:pageBlock>
+     </apex:form>    
+</apex:page>

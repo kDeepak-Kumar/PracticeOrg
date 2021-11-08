@@ -1,0 +1,7 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+
+    <a href="https://www.google.com" target="_blank"><img src="{!$Resource.CommunityCloudTest}"/></a>
+	
+    <br/>Invoked from Lightning aura Components
+    
+</aura:component>

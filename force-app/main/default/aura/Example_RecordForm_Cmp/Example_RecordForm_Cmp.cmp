@@ -1,0 +1,48 @@
+<aura:component >
+    <!-- RecordForm is used to 
+      edit - Creates an editable form to add a record or update an existing one. When updating an existing record, specify the recordId. Edit mode is the default when recordId is not provided, and displays a form to create new records.
+   view - Creates a form to display a record that the user can also edit. The record fields each have an edit button. View mode is the default when recordId is provided.
+   readonly - Creates a form to display a record without enabling edits. The form doesn’t display any buttons.
+    -->
+    
+    <!-- attribute for passing Record ID -->
+    <aura:attribute name="recId" type="id" />
+    
+    <!-- attribute for showing default fields instead of showing all fields using Layout -->
+    <aura:attribute name="fields" type="string[]" 
+                    default="['LastName','FirstName','Phone','IsActive__c','Email',
+                             'Birthdate','Description','OtherState']" />
+    
+    <lightning:card title="Record Form" >
+        <lightning:tabset selectedTabId="one" >
+            <lightning:tab label="Account(with Layout)" id="one">
+                <!-- With layout means which displays all the fields with respect to the object-->
+                <!-- mode has three variants "view" , "edit" , "readonly" -->
+                <lightning:recordForm
+                                      recordId="{!v.recId}"
+                                      objectApiName="Account"
+                                      layoutType="Compact"   
+                                      mode="view" 
+                                      columns="2"/>
+                <center>
+                        <lightning:button label="Submit" onclick="{!c.show}" />
+                </center>
+            </lightning:tab>
+            <lightning:tab label="Contact(without Layout)" id="two" >
+               <!-- onSubmit is used to change the values client side manually in controller
+					in the below example onSubmit, lastName is Given by default -->
+                <lightning:recordForm
+                                      aura:id="myRecordForm"
+                                      recordId="{!v.recId}"
+                                      objectApiName="Contact"
+                                      mode="Edit"
+                                      fields="{!v.fields}"
+                                      columns="2"
+                                      onsubmit="{!c.handleSubmit}"/>
+                <center>
+                        <lightning:button label="Submit" onclick="{!c.conShow}" />
+                </center>
+            </lightning:tab>
+        </lightning:tabset>
+    </lightning:card>    
+</aura:component>

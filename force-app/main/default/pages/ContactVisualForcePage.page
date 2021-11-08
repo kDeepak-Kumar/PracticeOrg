@@ -1,0 +1,29 @@
+<apex:page standardController="Contact">
+    <br/><h1>Contacts not associated with accounts are private and cannot be viewed by other users or included in reports.</h1> 
+    <apex:form >
+        <br/><apex:pageBlock title="Contact Edit" >
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!Save}" value="Save"/>
+            <apex:commandButton action="{!Cancel}" value="Cancel"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection columns="2" title="Contact Information">
+            <apex:inputField value="{!Contact.Lastname}"/>
+            <apex:inputField value="{!Contact.Firstname}"/>
+            <apex:inputField value="{!Contact.phone}"/>
+            <apex:inputField value="{!Contact.email}"/>
+            <apex:inputField value="{!Contact.accountID}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Address information">
+            <apex:inputField value="{!Contact.MailingStreet}"/>
+            <apex:inputField value="{!Contact.OtherStreet}"/>
+            <apex:inputField value="{!Contact.MailingCity}"/>
+            <apex:inputField value="{!Contact.OtherCity}"/>
+            <apex:inputField value="{!Contact.MailingPostalCode}"/>
+            <apex:inputField value="{!Contact.OtherPostalCode}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Address information" >
+            <apex:inputField value="{!Contact.Description}" />
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>  <br/>
+</apex:page>

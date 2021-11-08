@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template" >
+	<!-- attribute for storing accountId  -->
+    <aura:attribute name="accId" type="Id" />
+</aura:event>

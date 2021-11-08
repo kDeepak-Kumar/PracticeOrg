@@ -1,0 +1,30 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="accRecord" type="Object" />
+    <aura:attribute name="Error" type="String" />
+    <force:recordData aura:id="recordHandler"
+                      recordId="{!v.recordId}"
+                      layoutType="FULL"
+                      targetFields="{!v.accRecord}"
+                      targetError="{!v.Error}"
+                      mode="EDIT"
+                      recordUpdated="{!c.handleRecordUpdated}"
+                      />
+    <!-- Title of The Record -->
+    <div class="Record Details">
+        <lightning:card iconName="standard:account" title="{!v.accRecord.Name}" />
+    </div>
+    
+    <!-- Displaying Account Fields to Edit-->
+    <div class="Record Details">
+        <lightning:card iconName="action:edit" title="{!v.accRecord.Name + '  Edit'}" >
+            <lightning:recordForm
+                                  recordId="{!v.recordId}"
+                                  objectApiName="Account"
+                                  layoutType="Full"
+                                  columns="2"
+                                  mode="edit" /> 
+            <!--<lightning:input label="Account Name" value="{!v.accRecord.Name}" />-->
+     </lightning:card>
+    </div>
+</aura:component>

@@ -1,0 +1,10 @@
+<aura:component controller="Example_AppEvt_Apex">
+	
+    <aura:attribute name="accRecId" type="Id" />
+    <aura:attribute name="conRec" type="Contact[]" />
+    
+    <aura:handler event="c:Example_AppEvt" action="{!c.handleApplicationEvent}"/>
+     <aura:iteration items="{!v.conRec}" var="C">
+         {!C.LastName} <br/>
+    </aura:iteration>
+</aura:component>

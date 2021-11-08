@@ -1,0 +1,19 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    
+    <aura:attribute name="Car" type="Object" access="Public"
+                    default="{
+                             'sObjectType' : 'Car__c',
+                             'Name' : 'Manish',
+                             'sObjectType' : 'Car__c',
+                             'Picture__c' : 'C:/Users/Lenovo/Pictures/Screenshots/display.jpeg'
+                             }"/>
+    
+    <lightning:button label="Neutral" class="tile">
+        <div style="{ 'background-image:url(' + v.Car.Picture__c + ')'}"  class="innertile">
+            <div class="Lower-Third">
+                <h1 class="slds-truncate">{!v.Car.Contact__r.Name}</h1>
+            </div>
+        </div>
+    </lightning:button>
+    
+</aura:component>

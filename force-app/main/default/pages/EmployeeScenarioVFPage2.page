@@ -1,0 +1,17 @@
+<apex:page controller="EmployeeScenarioPageController">
+    <apex:form >
+        <apex:pageBlock title="Employee Records">
+            <apex:pageBlockSection title="Showing Alternate Employee Records" collapsible="false">
+                <apex:pageBlockTable value="{!AlternateEmployeeRec }" var="varObj">
+                <apex:column value="{!varObj.Name}"/>
+                <apex:column value="{!varObj.LastName__c }"/>
+                <apex:column value="{!varObj.FirstName__c}"/>
+                    
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Previous" action="{!PreviousVFPage}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>      
+</apex:page>

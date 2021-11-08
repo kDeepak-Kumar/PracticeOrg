@@ -1,0 +1,23 @@
+<aura:component controller="Example_Evt_Apex" >
+    <!-- Registering the Event -->
+    <aura:registerEvent name="accEvent" type="c:Example_Evt"/>
+    
+    <!-- attributes for reading the value -->
+    <aura:attribute name="acc" type="Account" 
+                    default="{'sObjectType':'Account','Name':'','Phone':'','Industry':''}" />
+    <!-- Account Record Id after Insert -->
+    <aura:attribute name="accRecId" type="String" />
+    
+    <lightning:card title="Creating Account Record"  >
+        <div class="box">
+            <lightning:input label="Account Name" value="{!v.acc.Name}" />
+            <lightning:input label ="Phone Number" value="{!v.acc.Phone}" />
+            <lightning:input label="Industry" value="{!v.acc.Industry}" />
+            <br/>
+            <lightning:buttongroup>
+                <lightning:button label="Create" onclick="{!c.createAcc}" />
+                <lightning:button label ="show" onclick ="{!c.show}" />
+            </lightning:buttongroup>
+        </div>
+    </lightning:card>
+</aura:component>

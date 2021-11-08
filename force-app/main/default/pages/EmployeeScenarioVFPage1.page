@@ -1,0 +1,15 @@
+<apex:page controller="EmployeeScenarioPageController" >
+    <apex:form >
+        <apex:pageBlock title="Employe Information ">
+            <apex:pageBlockSection title="Employee Edit" collapsible="false" columns="2">               
+                    <apex:inputField value="{!EmployeeRecords.LastName__c}"/>
+                    <apex:inputField value="{!EmployeeRecords.FirstName__c}"/>
+                    <apex:inputField value="{!EmployeeRecords.Name}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Save" action="{!InsertTheRecord}"/>
+                    <apex:commandButton value="Next" action="{!NextPage}"/>
+                </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

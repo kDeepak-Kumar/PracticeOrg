@@ -1,0 +1,36 @@
+<aura:component controller="Example_LayoutItem_Apex">
+    <!-- retrieve the data to be displayed before the component loads -->
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <!-- setting attributes for dataTabel -->
+    <aura:attribute name="data" type="sobject" />
+    <aura:attribute name="columns" type="list" />
+    <!-- setting recordId on using onrowaction in dataTable -->
+    <aura:attribute name="recId" type="id" />
+    <!-- setting aura:if to display second layout -->
+    <aura:attribute name="flag" type="boolean" default="false" />
+    <!-- setting mode of recordForm -->
+    <aura:attribute name="mode" type="string" />
+    <!-- setting layoutItem for record Form -->
+    <aura:attribute name="fields" type="string[]" default="['Name','Phone','Industry','Website','BillingState','BillingCity','OwnerId']" />
+    
+    <lightning:layout  >
+        <lightning:layoutItem title="DataTabel" size="8" padding="around-small" >
+                <lightning:datatable
+                                     keyField="id"
+                                     data="{! v.data }"
+                                     columns="{! v.columns }"
+                                     hideCheckboxColumn="true"
+                                     onrowaction="{!c.onRowAction}" />
+        </lightning:layoutItem>
+        <lightning:layoutItem size="4" padding="around-small" title="Record Info">
+            <aura:if isTrue="{!v.flag}" >
+                <lightning:recordForm
+                                      recordId="{!v.recId}"
+                                      objectApiName="Account"
+                                      fields="{!v.fields}"
+                                      mode="{!v.mode}" />
+            </aura:if>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

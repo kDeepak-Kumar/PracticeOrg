@@ -1,0 +1,10 @@
+.THIS .box {
+    margin-left:300px;
+    margin-top:130px;
+    padding-left:10px;
+    padding-right:50px;
+    width:400px;
+    height:370px;
+    border:1px solid grey;
+    background-color:White;
+}

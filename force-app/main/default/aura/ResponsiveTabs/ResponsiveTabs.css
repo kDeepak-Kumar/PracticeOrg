@@ -1,0 +1,43 @@
+.THIS {
+	margin: 25px;
+}
+
+.THIS.box{
+	width: 300px;
+	height: 100px;
+	background-color: red;
+}
+
+.THIS.swipeView {
+  display: grid;
+  grid-template-columns: repeat(4, 100%);
+  will-change: transform;
+  align-content: center;
+  overflow-x: auto;
+  scroll-snap-coordinate: 0 0;
+  scroll-snap-points-x: repeat(100%);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+/*
+.THIS section {
+  height: 80vh;
+  scroll-snap-align: start;
+}*/
+
+.THIS lightning:tab {
+  height: 80vh;
+  scroll-snap-align: start;
+}
+
+.THIS .green {
+  background: #ABE66F;
+}
+
+.THIS .purple {
+  background: #4E4E94;
+}
+
+.THIS .orange {
+  background: #FD8F58;
+}

@@ -1,0 +1,24 @@
+<aura:component controller="Example_AppEvt_Apex">
+    
+    <aura:registerEvent name="appEvent" type="c:Example_AppEvt"/>
+    <aura:attribute name="accId" type="Account" />
+    <aura:attribute name="flag" type="Boolean" default="false" />
+    
+    <div class="box">
+        <lightning:input label="Enter Account Name" aura:id="accName" />
+        <br/>
+        <lightning:button label="Search" onclick="{!c.searchAcc}" />
+    </div>
+    <br/> <br/>
+    <aura:if isTrue="{!v.flag}" >
+        <lightning:card title="Account Details" >
+            <lightning:recordForm
+                                  recordId="{!v.accId.Id}"
+                                  objectApiName="Account"
+                                  layoutType="Full"
+                                  columns="3"
+                                  mode="view" />
+            
+        </lightning:card>
+    </aura:if>
+</aura:component>

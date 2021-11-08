@@ -1,0 +1,53 @@
+<aura:component >
+    
+    <!-- handling the events -->
+    <aura:handler name="accEvent" event="c:Example_Evt" action="{!c.handleAccCmpEvent}"/>
+    <aura:handler name="conEvent" event="c:Example_Evt" action="{!c.handleConCmpEvent}"/>
+    
+    <aura:attribute name="accFlag" type="boolean" default="false"/>
+    <aura:attribute name="conFlag" type="boolean" default="false" />
+    <!-- setting account and contact fields to be displayed in Client side Controller accordingly-->
+    <aura:attribute name="fields" type="String[]" />
+    <!-- Setting the record Id's when ever the respective event fired -->
+    <aura:attribute name="recordId" type="Id" />  
+    
+    <lightning:layout class="box"> 
+        <lightning:layoutItem size="6" padding="around-small" >
+            <div class="slds-box">
+                <lightning:accordion aura:id="accordion" activeSectionName="A">
+                    <lightning:accordionSection name="A" label="Account">
+                        <c:Example_Evt_Child1_Cmp />
+                    </lightning:accordionSection>
+                    <lightning:accordionSection name="B" label="Contact">
+                        <c:Example_Evt_Child2_Cmp />
+                    </lightning:accordionSection>
+                </lightning:accordion>
+            </div>
+        </lightning:layoutItem>
+        <!-- displaying Account Record -->
+        <aura:if isTrue="{!v.accFlag}" >
+            <lightning:layoutItem size="6" padding="around-small" >
+                <lightning:recordForm
+                                      recordId="{!v.recordId}"
+                                      objectApiName="Account"
+                                      fields="{!v.fields}"
+                                      columns="2"
+                                      mode="view" />
+                
+            </lightning:layoutItem>
+        </aura:if>
+        
+        <!-- displaying contact Record -->
+        <aura:if isTrue="{!v.conFlag}" >
+            <lightning:layoutItem size="6" padding="around-small" >
+                <lightning:recordForm
+                                      recordId="{!v.recordId}"
+                                      objectApiName="Contact"
+                                      fields="{!v.fields}"
+                                      columns="2"
+                                      mode="view" />
+            </lightning:layoutItem>
+        </aura:if>
+    </lightning:layout>
+    
+</aura:component>

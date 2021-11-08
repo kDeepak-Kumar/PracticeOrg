@@ -1,0 +1,29 @@
+<apex:page controller="AccConOppController">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlock title="Account Infomation">
+                <apex:pageBlockSection title="Account Edit">
+                    <apex:inputField value="{!accountMethod.name}"/>
+                    <apex:inputField value="{!accountMethod.Phone}"/>
+                    <apex:inputField value="{!accountMethod.Rating}"/>
+                    <apex:inputField value="{!accountMethod.Active__c}"/>
+                    <apex:inputField value="{!accountMethod.Industry}"/>
+                    <apex:inputField value="{!accountMethod.Description}"/>                
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+            <apex:pageblock title="Contact Information">
+                <apex:pageBlockSection title="Contact Edit">
+                    <apex:inputField value="{!ContactInfo.lastName}"/>
+                    <apex:inputField value="{!ContactInfo.FirstName}"/>
+                    <apex:inputField value="{!ContactInfo.Title}"/>
+                    <apex:inputField value="{!ContactInfo.phone}"/>
+                    <apex:inputField value="{!ContactInfo.AccountId}"/>
+                    <apex:inputField value="{!ContactInfo.Description}"/>
+                </apex:pageBlockSection>            
+            </apex:pageblock>
+            <apex:pageBlockButtons >
+                    <apex:commandButton value="Next" action="{!Nextpagemethod}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

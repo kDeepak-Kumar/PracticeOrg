@@ -1,0 +1,38 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    
+    <lightning:card  > 
+        <lightning:recordEditForm objectApiName="Opportunity">
+            <lightning:messages />
+            <div class="slds-grid">
+                <div class="slds-col slds-size_2-of-12" title="Name 1">
+                    <lightning:inputField fieldName="Name"/>
+                </div>
+                <div class="slds-col slds-size_2-of-12">
+                    <lightning:inputField fieldName="StageName"/>
+                </div>
+                <div class="slds-col slds-size_2-of-12">
+                    <lightning:inputField fieldName="CloseDate"/>
+                </div>
+                <div class="slds-col slds-size_1-of-12">
+                    <lightning:inputField fieldName="Amount"/>
+                </div>
+                <div class="slds-col slds-size_2-of-12">
+                    <lightning:inputField fieldName="LeadSource"/>
+                </div>
+                <div class="slds-col slds-size_2-of-12">
+                        <lightning:input name="file1" type="file" label="Attachment" multiple="true" accept="image/png, .zip" onchange="{! c.handleFilesChange }"/>
+                </div>
+                <div class="slds-col slds-size_1-of-12">
+                    <lightning:buttonIcon iconName="utility:add" variant="brand" alternativeText="Settings" title="Settings" />
+                </div>
+            </div>
+            <lightning:button class="slds-m-top_small" type="submit" label="Create new" />
+        </lightning:recordEditForm>        
+        <aura:set attribute="actions">
+                    <lightning:buttonIcon iconName="utility:close" variant="brand" alternativeText="Close" title="Close" />
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            Card Body (custom component)
+        </p>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,10 @@
+<aura:event type="COMPONENT" description="Event template" >
+	
+    <!-- account record attributes (Storing account Record Id) -->
+    <aura:attribute name="accRecordId" type="String" />
+    <!-- contact record attribute (Storing contact Record Id)-->
+    <aura:attribute name="conRecordId" type="string" />
+    <!-- making flag true for Parent Component -->
+    <aura:attribute name="flagEvt" type="string" />
+    
+</aura:event>

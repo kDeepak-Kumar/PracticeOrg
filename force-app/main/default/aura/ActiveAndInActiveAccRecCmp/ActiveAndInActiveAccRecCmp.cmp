@@ -1,0 +1,78 @@
+<aura:component implements="force:lightningQuickAction" 
+                controller="ActiveAndInActiveAccRecApex">
+    <!--Storing Active Account Records-->
+    <aura:attribute name="ActiveAccountRecords" type="LIST" />
+    <!--Storing InActive Account Records-->
+    <aura:attribute name="InActiveAccountRecords" type="LIST"/>
+    <!-- If Condition for Active Records-->
+    <aura:attribute name="ToShowActiveRecords" type="boolean" default="false"/>
+    <!-- If Condition for InActive Records-->
+    <aura:attribute name="ToShowInActiveRecords" type="boolean" default="false"/>
+    
+    <div>
+        <div class="slds-text-align_center">
+            <!-- Creating Buttons for Active & InActive-->
+            <lightning:button variant="brand" label="Active" title="Active Records" onclick="{! c.ActiveRecMethod }" />
+            <lightning:button variant="brand" label="InActive" title="InActive Records" onclick="{! c.InActiveRecMethod }" />
+        </div >
+        <div >
+            <!-- Displaying Account Records-->
+            <aura:if isTrue="{!v.ToShowActiveRecords}">
+                <aura:iteration items="{!v.ActiveAccountRecords}" var="item"> 
+                    <article class="slds-card">
+                        <div class="slds-card__header slds-grid">
+                            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                <div class="slds-media__figure">
+                                    <span class="slds-icon_container slds-icon-standard-account" title="account">
+                                        <span class="slds-assistive-text">account</span>
+                                    </span>
+                                </div>
+                                <div class="slds-media__body">
+                                    <h2 class="slds-card__header-title">
+                                        <a href="javascript:void(0);" class="slds-card__header-link slds-truncate"  title="Accounts">
+                                            <span>{!item.Name}</span> <br/>
+                                            Account Name ::{!item.Name} <br/>
+                                            Account Phone ::{!item.Phone} <br/>
+                                            Account Active  ::{!item.Active__c} <br/>
+                                        </a>
+                                    </h2>
+                                </div>
+                            </header>
+                        </div>
+                        <div class="slds-card__body slds-card__body_inner slds-text-align_right">Today Created Opportunity Records</div>
+                    </article>
+                </aura:iteration>
+                <aura:set attribute="else">                  
+                    <aura:if isTrue="{!v.ToShowInActiveRecords}">
+                        <aura:iteration items="{!v.InActiveAccountRecords}" var="item"> 
+                            <article class="slds-card">
+                                <div class="slds-card__header slds-grid">
+                                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container slds-icon-standard-account" title="account">
+                                                <span class="slds-assistive-text">account</span>
+                                            </span>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <h2 class="slds-card__header-title">
+                                                <a href="javascript:void(0);" class="slds-card__header-link slds-truncate"  title="Accounts">
+                                                    <span>{!item.Name}</span> <br/>
+                                                    Account Name ::{!item.Name} <br/>
+                                                    Account Phone ::{!item.Phone} <br/>
+                                                    Account Active  ::{!item.Active__c} <br/>
+                                                </a>
+                                            </h2>
+                                        </div>
+                                    </header>
+                                </div>
+                                <div class="slds-card__body slds-card__body_inner slds-text-align_right">Today Created Opportunity Records</div>
+                            </article>
+                        </aura:iteration>
+                    </aura:if>
+                </aura:set>
+                
+            </aura:if>
+        </div>
+    </div>
+    
+</aura:component>

@@ -1,0 +1,21 @@
+<aura:component controller="Example_Evt_Apex">
+    <!-- registering the event -->
+    <aura:registerEvent name="conEvent" type="c:Example_Evt"/>
+    
+    <!-- attributes for Creating a contact Record -->
+    <aura:attribute name="con" type="Contact" 
+                    default="{'sObjectType':'Contact','LastName':'','FirstName':'','Phone':''}" />
+    <!-- attribute for storing created contact Id -->
+    <aura:attribute name="conRecId" type="string" />
+    
+    <lightning:card title="Creating Contact Record" >
+        <lightning:input label="Last Name" value="{!v.con.LastName}" />
+        <lightning:input label="First Name" value="{!v.con.FirstName}" />
+        <lightning:input label="Phone Number" value ="{!v.con.Phone}" />
+        <br/>
+        <lightning:buttongroup>
+            <lightning:button label="Create" onclick="{!c.createCon}" />
+            <lightning:button label ="show" onclick ="{!c.show}" />
+        </lightning:buttongroup>
+    </lightning:card>
+</aura:component>

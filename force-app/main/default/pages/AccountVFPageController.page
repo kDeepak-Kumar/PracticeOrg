@@ -1,0 +1,25 @@
+<apex:page standardController="account" Extensions="AccountController"  >
+    <apex:form >
+        <apex:pageBlock title="Account Edit Custom Controller">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!savingRecord}" value="Submit"/>
+            </apex:pageBlockButtons> 
+            <apex:pageBlockSection title="Account Info Custom">
+                <apex:inputField value="{!AccountObject.name}"/>
+                <!--apex:inputField value="{!AccountObject.ownerId}"/-->
+                <apex:inputField value="{!AccountObject.type}"/>
+                <apex:inputField value="{!AccountObject.rating}"/>
+                <apex:inputField value="{!AccountObject.Website}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Account Info Custom">
+                <apex:inputField value="{!AccountObject.ShippingStreet}"/>
+                <apex:inputField value="{!AccountObject.ShippingCity}"/>
+                <apex:inputField value="{!AccountObject.ShippingState}"/>
+                <apex:inputField value="{!AccountObject.ShippingPostalCode}"/>                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Account Info Custom">
+                <apex:inputField value="{!AccountObject.Description}"/>
+            </apex:pageBlockSection>  
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,33 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-small-size_6-of-12 slds-size_1-of-1 slds-large-size_4-of-12">
+            <span>Desktop View</span>
+        </div>
+        <div class="slds-col slds-small-size_6-of-12 slds-size_1-of-1 slds-large-size_4-of-12 ">
+            <span>Desktop View</span>
+        </div>
+        <div class="slds-col nonEssential slds-size_1-of-1 slds-large-size_4-of-12 slds-show_small">
+            <span>will not be displayed in the mobile version</span>
+        </div>
+    </div>
+    
+    <!-- Checking the links which opens in web browser or mobile app-->
+    <br/><br/><a href="/test/s/mobileview">href Google website</a><br/><br/>
+    <!-- <p onclick="{! c.navigateToVizient }">onclick Vizient same tab</p><br/><br/>
+    <p onclick="{! c.navigateTow3schools }">onclick w3schools new tab</p><br/><br/>
+    <p onclick="{! c.navigateToMobileView }">onclick Mobile View Page</p> <br/><br/> -->
+    
+    <p>checking the compatibility of tabs in mobile device</p><br/>
+    <div  ontouchmove="{!c.touchmove}"></div>
+    <lightning:tabset variant="scoped">
+        <lightning:tab label="Item One">
+            One Content !
+        </lightning:tab>
+        <lightning:tab label="Item Two">
+            Two Content !
+        </lightning:tab>
+        <lightning:tab label="Item Three">
+            Three Content !
+        </lightning:tab>
+    </lightning:tabset>
+</aura:component>

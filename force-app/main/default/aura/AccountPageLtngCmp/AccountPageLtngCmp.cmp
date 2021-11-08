@@ -1,0 +1,22 @@
+<aura:component controller="AccountPageLtngCmpApex" >
+    <aura:attribute name="SearchResults" type="LIST" /> 
+    <div>
+        <div>
+            <!-- Creating Header -->
+            <div class="demo-only slds-text-heading_medium slds-text-align_center" style="padding:0.5rem;background:#16325c">
+                <div class="slds-text-color_inverse-weak">Account Records</div>
+                <div class="search slds-text-align_left">
+                    <div class="search-wrapper">
+                        <form class="search-form">
+                            <div class="search-input-wrapper">
+                                <input class="search-input" type="text" placeholder="My Search"/>
+                            </div>
+                            <input type="hidden" name="language" value="en" />
+                        </form>
+                    </div>
+                    <lightning:button label="Search" title="Search Records" onclick="{! c.handleClick }"/>
+                </div>                
+            </div>
+        </div>
+    </div>
+</aura:component>

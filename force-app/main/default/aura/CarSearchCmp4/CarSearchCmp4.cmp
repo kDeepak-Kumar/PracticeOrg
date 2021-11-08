@@ -1,0 +1,10 @@
+<aura:component >
+	
+    <!-- handling the Event Fired by CarSearchFormCmp -->
+    <aura:handler name="SearchFormSubmit" event="c:SearchFormSubmitEvent" action="{!c.doFormSubmit}"/>
+    
+    <lightning:card title="Search Youre Car" Class="bottom_margin">
+        <c:CarSearchFormCmp/>
+    </lightning:card>
+    
+</aura:component>

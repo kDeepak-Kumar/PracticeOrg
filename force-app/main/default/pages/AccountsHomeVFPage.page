@@ -1,0 +1,20 @@
+<apex:page Controller="AccountHomePageController" >
+    <apex:form >
+       <apex:pageBlock >
+           <apex:pageBlockSection >
+               <apex:pageBlockSectionItem >
+                   <apex:selectList value="{!Filter}"  size="1">
+                       <apex:selectOptions value="{!Records}" />
+                           <apex:actionSupport action="{!ShowRecords}" event="Onchange" reRender="myPageBlocktable" />
+                   </apex:selectList>
+               </apex:pageBlockSectionItem>  
+           </apex:pageBlockSection>
+           <apex:pageBlockTable value="{!accRecords }" var="a" id="myPageBlocktable">
+               <apex:column value="{!a.id}"/>
+               <apex:column value="{!a.name}"/>
+               <apex:column value="{!a.phone}"/>
+               <apex:column value="{!a.Active__c}"/>
+           </apex:pageBlockTable>
+       </apex:pageBlock>
+    </apex:form>
+</apex:page>

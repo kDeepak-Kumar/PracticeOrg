@@ -1,0 +1,104 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <div class="footer" style="padding-bottom: 15px">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_4-of-12 contactUs">
+                <div style="margin-top: 24px;padding-bottom: 24px;">
+                    <center>
+                        <a href="https://www.taskus.com/contact-us/" class="contact-btn-new">Contact Us</a>
+                    </center>
+                </div>               
+            </div>
+            <div class="slds-col slds-size_2-of-12">
+                <h3 class="f-title">Navigation</h3>
+                <ul class="f-nav clearfix">
+                    <li>
+                        <a href="https://www.taskus.com/our-advantage/">Our Advantage</a>
+                    </li>
+                    <li>
+                        <a href="https://www.taskus.com/customer-experience-outsourcing/">Customer Experience</a>
+                    </li>
+                    <li>
+                        <a href="https://www.taskus.com/back-office-support-outsourcing/">Back Office Support</a>
+                    </li>
+                    <li>
+                        <a href="https://www.taskus.com/clients/">Clients</a>
+                    </li>
+                </ul>
+                
+            </div>
+            <div class="slds-col slds-size_2-of-12 column ">
+                <h3 class="f-title">Quick Links</h3>
+                <ul class="f-nav clearfix ">
+                    <li>
+                        <a href="https://www.taskus.com/about/" aria-current="page">About</a>
+                    </li>
+                    <li>
+                        <a href="https://www.taskus.com/blog/">Blog</a>
+                    </li>
+                    <li>
+                        <a href="https://www.taskus.com/resources/">Resources</a>
+                    </li>
+                    <li>
+                        <a href="https://www.taskus.com/resources/">Resources</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="slds-col slds-size_2-of-12 column " style="padding-top: 35px">
+                
+                <ul class="f-nav clearfix ">
+                    <li>
+                        <a href="https://www.taskus.com/about/" aria-current="page">About</a>
+                    </li>
+                    <li>
+                        <a href="https://www.taskus.com/blog/">Blog</a>
+                    </li>
+                    <li>
+                        <a href="https://www.taskus.com/resources/">Resources</a>
+                    </li>
+                    <li>
+                        <a href="https://www.taskus.com/resources/">Resources</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="slds-col slds-size_2-of-12">
+                <h3 class="f-title">Contact</h3>
+                <div class="info">
+                    <h4 >General Inquiries</h4>
+                    <p class="slds-p-top_x-small">(888) 400-TASK</p>
+                    <div class="slds-p-top_x-small"><a  href="mailto:info@taskus.com">info@taskus.com</a></div> 
+                    <div class="slds-p-top_x-small"><a href="mailto:sales@taskus.com">sales@taskus.com</a></div>
+                </div>
+            </div>
+        </div>        
+    </div> 
+    <div class="slds-grid slds-wrap fBottom">
+        <div class="slds-col slds-size_9-of-12 fPadding">
+            <div class="col">
+                <a href="https://www.taskus.com/privacy-policy/" class="footer-links">Privacy Policy</a> -
+                <a href="https://www.taskus.com/cookie-policy/" class="footer-links">Cookie Policy</a> -
+                <a href="https://www.taskus.com/privacy-notice-for-california-residents/" class="footer-links">Privacy Notice for California Residents</a> <br/>
+                <span style="color: #fff; font-size: 12px;">Copyright © 2020 TaskUs, All rights reserved.</span>
+            </div>
+        </div>
+        <div class="slds-col slds-size_3-of-12 " style="padding-top: 5px">
+            <ul class="f_social slds-list_horizontal" style="">
+                <li>
+                    <a class="linkedin" href="https://www.linkedin.com/company/taskus" target="_blank"><img src="{!$Resource.LinkedIn}"/></a>
+                </li>
+                <li>
+                    <a class="facebook" href="https://www.facebook.com/taskus" target="_blank"><img src="{!$Resource.Facebook}"/></a>
+                </li>
+                <li>
+                    <a class="twitter" href="https://www.twitter.com/taskus" target="_blank"><img src="{!$Resource.Twitter}"/></a>
+                </li>
+                <li>
+                    <a class="instagram" href="https://www.instagram.com/taskus" target="_blank"><img src="{!$Resource.Instagram}"/></a>
+                </li>
+                <li>
+                    <a class="glassdoor" href="https://www.glassdoor.com/Overview/Working-at-TaskUs-EI_IE350702.11,17.htm" target="_blank"><img src="{!$Resource.Glassdoor}"/></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aura:component>

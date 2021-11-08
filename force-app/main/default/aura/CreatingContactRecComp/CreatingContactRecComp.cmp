@@ -1,0 +1,6 @@
+<aura:component controller="CreatingContactRecordApex" 
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global" >
+    
+   
+</aura:component>

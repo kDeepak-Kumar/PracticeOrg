@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <div>
+    	Hello ...! this is Testing of Sample Lightning Component;
+    </div>
+    
+    <!--Assigining Hardcoded Value-->    
+    <aura:attribute name="MyName" Type="String" default="K.Deepak Kumar"/>
+    <aura:attribute name="MyPhoneNum" Type="String" default="8099706709"/>
+    <b>Name:</b> {!V.MyName} <br/>
+    <b>Phone No. ::</b> {!V.MyPhoneNum} <br/>
+    <lightning:button variant="brand" label="Click Me" title="Changes the phone No." onclick="{! c.handleClick }" />
+    <aura:handler name="init" value="{!this}" action="{!c.CreatingConstructor}"/>
+    
+</aura:component>

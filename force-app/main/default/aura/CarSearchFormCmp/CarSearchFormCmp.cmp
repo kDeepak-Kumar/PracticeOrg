@@ -1,0 +1,39 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" 
+                controller="CarTypesApex" access="global" >
+    
+    <!-- Init handler(constructor) -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInIt}" />
+    <!--Registering the event -->
+    <aura:registerEvent name="SearchFormSubmit" type="c:SearchFormSubmitEvent"/>
+    
+    <aura:attribute name="ButtonLabel" type="String" default="Search Button" />
+    <aura:attribute name="Newlabel" type="String" default="New Button" />
+    <aura:attribute name="ShowNew" type="boolean" default="false" />
+    <aura:attribute name="CarTypes" type="Car_Type__c[]" />
+    
+    <div class="c-container , slds-align_absolute-center"> 
+        <lightning:layout  >
+            <lightning:layoutItem  padding="around-small" >
+                <lightning:select class="slds-align_absolute-center" name="Select Item"
+                                  label="All Types" aura:id="CarTypeList" value="" >
+                    <option value="" text="All Types" />
+                    <aura:iteration items="{!v.CarTypes}" var="item">
+                        <option value="{!item.Name}" text="{!item.Name}"/><br/>
+                    </aura:iteration>
+                    
+                </lightning:select>    
+            </lightning:layoutItem>
+            
+            <lightning:layoutItem  padding="around-small">
+                <lightning:button variant="brand" label="{!v.ButtonLabel}" title="Search" onclick="{!c.onSearchClick}" />
+            </lightning:layoutItem>
+            
+            <aura:if isTrue="{!v.ShowNew}">
+                <lightning:layoutItem  padding="around-small">
+                    <lightning:button variant="brand-outline" label="{!v.Newlabel}" title="Create New" onclick="{!c.CreateNewRecord}" />
+                </lightning:layoutItem>
+            </aura:if> 
+        </lightning:layout>
+    </div > 
+    
+</aura:component>

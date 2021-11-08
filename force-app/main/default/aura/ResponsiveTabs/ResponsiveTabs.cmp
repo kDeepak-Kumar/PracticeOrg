@@ -1,0 +1,48 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="touchStart" type="double" default="0.00" />
+    <aura:attribute name="touchEnd" type="double" default="0.00" />
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <p>Click on the blue "buttons" to make the red square move.</p> -->
+    
+    <div class="box" onclick="{!c.doStuff}">
+    </div>
+    
+    <div>
+        <ui:outputText value="{!v.touchStart}"/>
+    </div>
+    <div>
+        <ui:outputText value="{!v.touchEnd}"/>
+    </div> <br/><br/>
+    
+    <!-- trying through css
+    <div class="swipeView">
+        <section class="green">
+            
+        </section>
+        <section class="purple">
+            
+        </section>
+        <section class="orange">
+            
+        </section>
+    </div>-->
+    
+    <div >
+        <lightning:tabset variant="scoped" class="swipeView">
+            <lightning:tab label="Item One" class="green">
+                    One Content !
+                
+            </lightning:tab>
+            <lightning:tab label="Item Two" class="purple">
+                    Two Content !
+                
+            </lightning:tab>
+            <lightning:tab label="Item Three" class="orange">
+                    Three Content !
+                
+            </lightning:tab>
+        </lightning:tabset>
+    </div>
+    
+    
+</aura:component>

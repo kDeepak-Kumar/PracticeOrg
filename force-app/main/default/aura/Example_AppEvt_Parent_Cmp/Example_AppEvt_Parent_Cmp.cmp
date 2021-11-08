@@ -1,0 +1,4 @@
+<aura:component >
+	<c:Example_AppEvt_Child1_Cmp />
+    <c:Example_AppEvt_Child2_Cmp />
+</aura:component>

@@ -1,0 +1,30 @@
+<aura:component >
+    <div class="slds-box">
+        <div class="c-container">
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem size="6" padding="around-small">
+                    <div class="custom-box">
+                        <lightning:input name="FName" placeholder="First Name"/>
+                    </div>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="6" padding="around-small">
+                    <div class="custom-box">
+                        <lightning:input name="FName" placeholder="Last Name"/>
+                    </div>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="12" padding="around-small">
+                    <div class="custom-box">
+                        <lightning:input type="email" name="email" value="         @gmail.com"  />
+                        you can use letters, numbers and Periods
+                    </div>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="4" padding="around-small">
+                    <div class="custom-box">4</div>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="4" padding="around-small">
+                    <div class="custom-box">5</div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,49 @@
+<aura:component controller="Example_TabSetApex">
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <!-- attributes for Displaying Account Records using Data Table -->
+    <aura:attribute name="data" type="Object" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="selectedRowsCount" type="Integer" default="0"/>
+    <aura:attribute name="maxRowSelection" type="Integer" default="5"/>
+    
+    <!-- attributes for creating a contact Record -->
+    <aura:attribute name="result" type="string" />
+    <!-- for Navigation from tab to tab-->
+    <aura:attribute name="navigation" type="string" default="one" />
+    
+    <lightning:tabset selectedTabId="{!v.navigation}">
+        <lightning:tab label="List of Accounts (Data Table)" id="one">
+            <div style="height: 300px">
+                <h1>Selected Rows: {! v.selectedRowsCount }</h1>
+                <lightning:datatable
+                                     columns="{! v.columns }"
+                                     data="{! v.data }"
+                                     keyField="id"
+                                     maxRowSelection="{! v.maxRowSelection }"
+                                     onrowselection="{! c.updateSelectedText }"/>
+            </div>
+            <br/>
+            <center><lightning:button label="Next" onclick="{!c.next}" /></center>
+            
+        </lightning:tab>
+        <lightning:tab label="Insert Account Record" title="2nd tab extended title" id="two">
+            <div class="box">
+                <lightning:input label="Last Name" type="string" aura:id="lName"/>
+                <lightning:input label="First Name" type="string" aura:id="fName"/>
+                <lightning:input label="Phone" type="string" aura:id="phone" />
+                <lightning:input label="Email" type="string" aura:id="email"/> <br/>
+                <lightning:buttongroup>
+                    <lightning:button label="Create" onclick="{!c.create}" />
+                    <lightning:button label="Cancel" onclick="{!c.cancel}" />
+                </lightning:buttongroup>
+                Result :: {!v.result}
+            </div> <br/><br/>
+            <center><lightning:buttongroup>
+                <lightning:button label="Previous" onclick="{!c.prev}" />
+                <lightning:button label="Done" onclick="{!c.done}" />
+            </lightning:buttongroup></center>
+        </lightning:tab>
+
+    </lightning:tabset>
+    
+</aura:component>
